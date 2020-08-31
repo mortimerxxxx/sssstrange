@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+        <h2>{{ title }}</h2>
+        <button @click="title = 'creez chur'">Updete title</button>
+
+    </div>
+    <div id="app2">
+
+        <h2>{{ title }}</h2>
+        <button @click="updateFirstTitle">Update</button>
+    </div>
+    <script>
+        let vue1 = new Vue({
+            el: '#app',
+            data: {
+                title: 'Ty ne Ty'
+            },
+            methods: {
+                alertNew: function() {
+                    alert('Ty tochno vse smozhesh')
+                }
+            }
+        })
+
+        new Vue({
+            el: '#app2',
+            data: {
+                title: 'tut byl zhuk'
+            },
+            methods: {
+                updateFirstTitle: function() {
+                    vue1.title = 'updated from me'
+
+                    setTimeout(function() {
+                        vue1.alertNew()  
+                },1000)
+              }
+            }
+        })
+    </script>
+</body>
+</html>

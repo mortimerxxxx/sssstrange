@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <title>Document</title>
+</head>
+<body>
+<div id="adds">
+    <h2 @mousemove="moveCoursor">{{ title }} = {{ counter }} X: {{ x }} \ Y: {{ y }}</h2>
+
+    <hr>
+
+    <input type="text" @keyup.b="alertValue">
+
+    <button @click="riseCounter(5, 'Сиськи', $event)">Увеличить на 5</button>
+    <button @click="riseCounter(10, 'Письки', $event)">Увеличить на 10</button>
+
+    <br><br>
+    <input type="text" v-model="inputValue">
+    <h2>{{ inputValue }}</h2>
+
+    <br><br>
+    <div class="romb" @click="isActive = !isActive" :class="getCssClasses"></div>
+
+    <div class="romb" @click="isActive = !isActive" :style="circleClasses"></div>
+    <div class="romb" :style="[circleClasses, {'width': height + 'px'}]"></div>
+    <input type="text" v-model="color">
+    <input type="text" v-model="height">
+
+</div>
+
+<style>
+    .romb {
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        border: 1px solid #000;
+    }
+    .red {background: rgb(173, 72, 212);}
+    .blue{background: rgb(15, 25, 155);}
+    .green{background: rgb(5, 170, 54);}
+</style>
+
+    <!-- <script src="./js/script.js"></script> -->
+    <script>
+        new Vue({
+            el: '#adds',
+            data: {
+                counter: 0,
+                title: 'Счетчик',
+                x: 0,
+                y: 0,
+                inputValue: 'Hello world',
+                color: 'blue',
+                isActive: false,
+                height: 100
+            },
+            computed: {
+                    getCssClasses: function () {
+                        return {
+                            'red': this.isActive,
+                            'green': !this.isActive
+                        }
+                    },
+                    circleClasses: function() {
+                        return {
+                            'background': this.color, 
+                            'height': this.height + 'px'
+                        }
+                    }
+                },
+            methods: {
+                riseCounter: function(num, str) {
+                    this.counter += num
+                    this.title = str
+
+                    if (num === 5) {
+                        event.target.style.color = '#fafa'
+                    }else if (num === 10) {
+                        event.target.style.color = '#afa'
+                    }
+                },
+                moveCoursor: function(){
+                    this.x = event.clientX
+                    this.y = event.clientY
+                },
+                alertValue: function(event){
+                    alert(event.target.value)
+                },
+                
+            }
+        })
+    </script>
+</body>
+</html>

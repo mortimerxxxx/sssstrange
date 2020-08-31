@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+        <div id="app" >
+            <h3>{{ textSearch }} (длина: {{ textSearch.length }})</h3>
+            <input type="text" size="50" v-model="textSearch">
+            
+            <button @click="getHashtags">Hashtag</button>
+
+            <button @click="getCities">Cities</button>
+
+            <ul>
+                <li v-for="hashtag in hashtags">{{ hashtag }}</li>
+            </ul>
+
+            <ul>
+                <li v-for="city in cities">{{ city.region }}: {{ city.city }}</li>
+            </ul>
+            
+        </div>
+
+
+
+
+
+    <script>
+        let app = new Vue({
+            el: '#app',
+            data: {
+                hashtags: [],
+                cities: [],
+                textSearch: "",
+                url: {
+                    hashtags: 'https://dka-develop.ru/api?type=hashtag',
+                    cities: 'https://dka-develop.ru/api?type=city'
+                }
+            },
+
+            watch: {
+                textSearch: function(){
+                    if( this.textSearch.length > 3 ) {
+                        this.textSearch = 'меняем содержимое поля из кода'
+                    }
+                }
+            },
+            created: function() {
+
+            },
+            methods: {
+                getHashtags(){
+                    axios.get(this.url.hashtags).then((response) => {
+                    console.log(this);
+                    this.hashtags = response.data;
+                    });
+                },
+                getCities(){
+                    axios.get(this.url.cities).then((response) => {
+                    console.log(this);
+                    this.cities = response.data;
+                    });
+                }
+            }
+            
+        });
+    </script>
+
+</body>
+</html>

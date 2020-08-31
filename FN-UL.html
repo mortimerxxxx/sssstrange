@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <p class="mb-60">Юридические лица могут получить доступ к <a href="http://lkul.nalog.ru/" target="_blank" rel="nofollow">личному кабинету</a> на сайте ФНС. Однако, перед использованием функций сервиса, налогоплательщики должны выполнить ряд технических условий</p>
+
+    <h4 class="mb-32">Регистрация и авторизация</h4>
+        <p class="mb-32">Для того чтобы организации могли получить доступ к личному кабинету, им необходимо иметь квалифицированную электронную подпись, выданную в Удостоверяющем центре, аккредитованном Минкомсвязи России.</p>
+        <p class="mb-32">Важным условием является наличие сертификата ключа с ГОСТ-2012. Налогоплательщики, использующие сертификаты ключей с 2001-ГОСТ не смогут получить доступ к личному кабинету.</p>
+        <p class="mb-60">Перед регистрацией в «Личном кабинете юридического лица», налогоплательщик должен провести техническую диагностику. Её можно провести двумя способами.</p>
+
+    <h4 class="mb-32">Диагностика подключения по сертификату электронной подписи</h4>
+        <p class="mb-32">Перед подключением к личному кабинету, налогоплательщику нужно выполнить следующие действия:
+        </p>
+
+    <div class="d-flex flex-column mb-70">
+        <div class="number-block d-flex align-items-center">
+            <div class="number-block__num mr-3">1</div>
+            <div class="number-block__text">Удостоверится, что электронная подпись соответствует положениям <a href="https://www.nalog.ru/rn77/about_fts/docs/4038321/" target="_blank" rel="nofollow">Федерального закона от 06.04.2011 № 63-ФЗ</a>.</div>
+        </div>
+        <div class="number-block d-flex align-items-center">
+            <div class="number-block__num mr-3">2</div>
+            <div class="number-block__text">Установить криптопровайдер с поддержкой алгоритмов шифрования ГОСТ 34.10-2001, ГОСТ 28147-89, ГОСТ Р 34.11-2012. Одним из таких криптопровайдеров является <a href="https://www.cryptopro.ru/products/cryptopro-csp" target="_blank" rel="nofollow">«КриптоПро CSP 5</a>.0».
+            </div>
+        </div>
+        <div class="number-block d-flex align-items-center">
+            <div class="number-block__num mr-3">3</div>
+            <div class="number-block__text">Установить браузер, поддерживающий стандарты, описанные в предыдущем пункте. Подходят практически все современные браузеры — Google Chrome, Яндекс.Браузер и т.д. Браузеры нужно обновить до последней актуальной версии.</div>
+        </div>
+        <div class="number-block d-flex align-items-center">
+            <div class="number-block__num mr-3">4</div>
+            <div class="number-block__text">Установить плагин для создания и проверки электронной подписи <a href="https://www.cryptopro.ru/products/cades/plugin/" target="_blank" rel="nofollow">«КриптоПро ЭЦП Browser plug-in»</a>.</div>
+        </div>
+        <div class="number-block d-flex align-items-start">
+            <div class="number-block__num mr-3">5</div>
+            <div class="number-block__text">Установить сертификаты ключей проверки электронной подписи <a href="https://e-trust.gosuslugi.ru/app/scc/portal/api/v1/portal/mainca/download/8CAE88BBFD404A7A53630864F9033606E1DC45E2" target="_blank" rel="nofollow">головного Удостоверяющего Центра</a> и <a href="https://e-trust.gosuslugi.ru/app/scc/portal/api/v1/portal/mainca/download/4BC6DC14D97010C41A26E058AD851F81C842415A" target="_blank" rel="nofollow">удостоверяющего центра Минкомсвязи</a>, а также самоподписанный квалифицированный сертификат ключа проверки электронной подписи в «Доверенные корневые центры». <br><br>
+            Остальные сертификаты из КСКПЭП должны быть установлены в  «Промежуточные центры сертификации».<br><br>
+            КСККЭП, который был выдан юридическому лицу удостоверяющим центром, должен быть установлен в хранилище «Личные»
+            </div>
+        </div>
+        <div class="number-block d-flex align-items-center">
+            <div class="number-block__num mr-3">6</div>
+            <div class="number-block__text">Открыть порты 80 и 443 должны для отправки и приёма данных.</div>
+        </div>
+        <div class="number-block d-flex align-items-center">
+            <div class="number-block__num mr-3">7</div>
+            <div class="number-block__text">Узлы http://lkul.nalog.ru и https://lkul.nalog.ru нужнов зону надёжных узлов
+            </div>
+        </div>
+        <div class="number-block d-flex align-items-center">
+            <div class="number-block__num mr-3">8</div>
+            <div class="number-block__text">Начать проверку, нажав соответствующую кнопку внизу <a href="http://lkul.nalog.ru/check_cryptopro.php" target="_blank" rel="nofollow">страницы проверки условий доступа</a>. </div>
+        </div>
+    </div>
+
+    <style>
+        .number-block {
+            margin-bottom: 27px;
+        }
+        .number-block__num {
+            color: #005EA4;
+            font-weight: 800;
+            font-size: 32px;
+            line-height: 44px;
+            height: 42px;
+            width: 24px;
+        }
+    </style>
+
+        <h4 class="mb-32">Диагностика подключения по сертификату ЕГАИС на аппаратном ключе</h4>
+            <p class="mb-32">Эту диагностику необходимо выполнить тем ЮЛ, которые используют «Рутокен ЭЦП 2.0» в качестве носителя. Налогоплательщик выполнить следующие действия:
+            </p>
+        
+            <div class="d-flex flex-column mb-24">
+                <div class="number-block d-flex align-items-center">
+                    <div class="number-block__num mr-3">1</div>
+                    <div class="number-block__text">Завести КЭП — квалифицированную электронную подпись — по шаблону «Сертификат для ЕГАИС».</div>
+                </div>
+                <div class="number-block d-flex align-items-center">
+                    <div class="number-block__num mr-3">2</div>
+                    <div class="number-block__text">Установить программу «Рутокен Коннект». Дополнительные компоненты и плагины для браузеров автоматически установятся вместе с «Рутокен Коннект».
+                    </div>
+                </div>
+                <div class="number-block d-flex align-items-center">
+                    <div class="number-block__num mr-3">3</div>
+                    <div class="number-block__text">Выбрать сертификат электронной подписи и введите PIN-код «Рутокена».</div>
+                </div>
+                <div class="number-block d-flex align-items-center">
+                    <div class="number-block__num mr-3">4</div>
+                    <div class="number-block__text">Перейти на страницу проверки условий подключения.</div>
+                </div>
+            </div>
+
+        <p class="mb-32">После проделанных шагов в личном кабинете появится возможность авторизации выбранным методом.
+        </p>
+
+        <div class="row d-flex p-24 justify-content-between align-items-center shadow sdacha_otcheta rounded mb-100">
+            <div class="d-flex  zakazat">
+                <div class="zakazat__tile flex-column pt-3 mb-10">
+                    <div class="mr-30 mb-30" style="max-width: 484px;">
+                        Получить электронную подпись можно в удостоверяющем центре. АО «Калуга Астрал» предоставляет два продукта: 
+                    </div>
+                    <div class="mobile d-flex w-100">
+                        <button class="d-flex align-items-center justify-content-center zakazat__button"><a
+                                href="https://play.google.com/store/apps/details?id=ru.fns.lkfl&hl=ru"
+                                target="blank"
+                                style="font-weight: bold; font-size: 12px; line-height: 16px;">
+                                Астрал-ЭТ</a></button>
+                        <button class="d-flex align-items-center justify-content-center zakazat__button"><a
+                                href="https://apps.apple.com/ru/app/%D0%BD%D0%B0%D0%BB%D0%BE%D0%B3%D0%B8-%D1%84%D0%BB/id1286819946"
+                                target="blank"
+                                style="font-weight: bold; font-size: 12px; line-height: 16px;">1С-ЭТП</a></button>
+                    </div>
+                </div>
+                <img src="/upload/iblock/7e6/astral.png" alt="Получение электронной подписи"
+                    class="zakazat__img mobile-img mb-3">
+            </div>
+        </div>
+
+        <style>
+            .zakazat__button {
+                padding: 12px 40px;
+                margin-right: 13px;
+                color: rgb(255, 255, 255);
+                border: none;
+                background: #005EA4;
+                border-radius: 4px;
+            }
+
+            .zakazat__button a {
+                color: rgb(255, 255, 255);
+            }
+
+            .zakazat__button:hover {
+                background: #0b66ac;
+            }
+
+            @media (max-width: 1199px) {
+                .zakazat__img {
+                    padding: 10px 10px;
+                }
+
+                .mobile-img {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 767px) {
+                .zakazat__img {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .mobile-img {
+                    display: none;
+                }
+            }
+        </style>
+
+        <h4 class="mb-32">Возможности личного кабинета на 2020 год</h4>
+            <p class="mb-32">Юридические лица подключаются к личному кабинету, чтобы пользоваться удалёнными услугами, которые он предоставляет. Основными функциями личного кабинета для ООО являются:</p>
+
+            <div class="container mb-50">
+                <div class="row d-flex flex-column mt-5 vzaimo-bg ">
+                    <div class="col d-flex align-items-center mt-3 mb-3 px-4 py-4 shadow kak-nachat rounded">
+                        <div style="min-width:43px; min-height: 48px">
+                            <img src="/upload/iblock/05f/pol.svg" alt="получение выписки из ЕГРН">
+                        </div>
+                        <span class="pl-3">получение выписки из ЕГРН на собственную организацию;</span>
+                    </div>
+                    <div class="col d-flex align-items-center mt-3 mb-3 px-4 py-4 shadow kak-nachat rounded">
+                        <div style="min-width:43px; min-height: 48px">
+                            <img src="/upload/iblock/ade/pencil 1.svg" alt="внесение изменение в ЕГРЮЛ">
+                        </div>
+                        <span class="pl-3">внесение изменение в ЕГРЮЛ с помощью электронных документов</span>
+                    </div>
+                    <div class="col d-flex align-items-center mt-3 mb-3 px-4 py-4 shadow kak-nachat rounded">
+                        <div style="min-width:43px; min-height: 48px">
+                            <img src="/upload/iblock/f88/money 1.svg" alt="получение актуальной информации">
+                        </div>
+                        <span class="pl-3">получение актуальной информации по налоговой задолженности, а также возможность её оплаты;</span>
+                    </div>
+                    <div class="col d-flex align-items-center mt-3 mb-3 px-4 py-4 shadow kak-nachat rounded">
+                        <div style="min-width:43px; min-height: 48px">
+                            <img src="/upload/iblock/f79/email 1.svg" alt="направление в ИФНС сообщений">
+                        </div>
+                        <span class="pl-3">направление в ИФНС сообщений по форме С-09-6 об участии в российских организациях;
+                        </span>
+                    </div>
+                    <div class="col d-flex align-items-center mt-3 mb-3 px-4 py-4 shadow kak-nachat rounded">
+                        <div style="min-width:43px; min-height: 48px">
+                            <img src="/upload/iblock/5d4/dossier 1.svg" alt="получение справок об уплате налогов">
+                        </div>
+                        <span class="pl-3">получение справок об уплате налогов, штрафов, сборов и т.д.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                    .kak-nachat {
+                    background: rgb(255, 255, 255);
+                    }
+                    .vzaimo-bg {
+                    position: relative;
+                    }
+            
+                    .vzaimo-bg::after {
+                    content: '';
+                    position: absolute;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    width: 88%;
+                    height: 100%;
+                    background: #EBEEF1;
+                    border-radius: 8px;
+                    top:0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: -1;
+                    }
+            </style>
+
+                <p class="mb-32">В личном кабинете также указывается ход исполнения тех или иных заявлений. Таким образом, ЮЛ может самостоятельно контролировать сроки исполнения услуг без необходимости личного визита в налоговую инспекцию.</p>
+                <p class="mb-32">ФНС предоставляет личный кабинет для юридических лиц со множеством функций. С помощью этого сервиса организации могут получать услуги налоговой в удалённом формате.</p>
+
+
+
+
+
+</body>
+</html>
